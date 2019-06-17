@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+final BUILD_DATE = new Date().format('yyyy-MM-dd_HH:mm:ss')
+
+def getVersionCode = { ->
+    def git = 'git rev-list HEAD --count'
+
+    def proc = git.execute()
+    proc.waitFor()
+    def desc = "${proc.in.text}".trim()
+
+    if (desc.isEmpty()) {
+        println "ERROR setting version code"
+        return -1
+    }
+    return Integer.parseInt(desc)
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion = '28.0.3'
+
+    defaultConfig {
+        applicationId "org.exarhteam.iitc_mobile"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode = getVersionCode()
+        versionName "0.29.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            storeFile file("../keystore/debug.keystore")
+        }
+        release {
+            if (System.getenv("TRAVIS")) {
+                storeFile file("../keystore/android.jks")
+                storePassword System.getenv("KEYSTORE_PASS")
+                keyAlias System.getenv("ALIAS_NAME")
+                keyPassword System.getenv("ALIAS_PASS")
+            } else {
+                // We use keystore.properties file for signing data.
+                def keystoreProperties = new Properties()
+                keystoreProperties.load(new FileInputStream(rootProject.file("keystore.properties")))
+
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-test$BUILD_DATE"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    applicationVariants.all { variant ->
+        variant.resValue  "string", "application_id", variant.applicationId
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+}
+
+task copyUserscripts(type: Copy) {
+    description = 'Updating prebuilt plugins'
+    from '../assets'
+    into 'src/main/assets'
+    include('*')
+    include('**/*')
+}
+
+preBuild.dependsOn copyUserscripts

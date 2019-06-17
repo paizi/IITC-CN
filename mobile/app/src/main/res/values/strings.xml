@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toggle_map">切换地图可见性</string>
+    <string name="clear_log">清除log</string>
+    <string name="debug_run">执行</string>
+    <string name="activity_settings">IITC Mobile 设置</string>
+    <string name="activity_plugins">IITC 插件</string>
+    <string name="activity_share">分享…</string>
+    <string name="activity_share_to_clipboard">复制到剪贴板</string>
+    <string name="activity_save_to_file">保存到文件</string>
+    <string name="action_settings">设置</string>
+    <string name="drawer_open">显示导览菜单</string>
+    <string name="drawer_close">隐藏导览菜单</string>
+    <string name="version">显示版本</string>
+
+    <string name="close">关闭</string>
+    <string name="download_description">下载最新的intel包…</string>
+
+    <string name="pref_about_title">关于 IITC Mobile</string>
+    <!-- Use CDATA to prevent android from parsing html tags....we are doing this with Html.fromHtml() -->
+    <string name="pref_about_text">
+        <![CDATA[
+        <h1>Ingress Intel Total Conversion Mobile</h1>
+        <b>Build 版本: %1$s</b><br>
+        <b>IITC 版本: %2$s</b><br>
+        <br>
+        <b>由 <a href="https://github.com/leCradle">cradle</a>, <a href="https://github.com/fkloft">fkloft</a> 与
+        其他贡献者共同制作</b><br><br>
+        <b>图标由 <a href="http://be.net/giuseppelucido">Giuseppe Lucido</a> 制作</b><br><br>
+        IITC Mobile 是一个专为 Ingress Intel Total Conversion (IITC) userscript 优化的浏览器
+	, 由 <a href="https://github.com/breunigs"><b>breunigs</b></a> 制作。
+        在 Niantic 要求主要开发者关闭他在github的仓库后，就改由 <a href="https://github.com/jonatkins"><b>jonatkins</b></a> 的分支继续开发。
+        <h3>社群:</h3>
+        • 前往 <a href="https://iitc.modos189.ru/">IITC website</a> 下载最新的版本。<br>
+        • 关注 <a href="https://plus.google.com/105383756361375410867">IITC Google+ 页面</a>
+        获得公告资讯。<br>
+        • 加入<a href="https://plus.google.com/communities/105647403088015055797">IITC Google+ 社群</a>
+        与其他使用者互相讨论或取得帮助。
+        <h3>开发者:</h3>
+        <a href="https://github.com/iitc-project/ingress-intel-total-conversion">IITC on Github</a>
+	<br>中文版由BlingWang汉化，保留翻译版权。 <a href="https://blingwang.cn">访问我的个人网站</a>
+        <h3>IITC Licence:</h3>
+        Copyright © 2013 Stefan Breunig, Jon Atkins, Philipp Schäfer and others<br><br>
+
+        Permission to use, copy, modify, and/or distribute this software for
+        any purpose with or without fee is hereby granted, provided that the
+        above copyright notice and this permission notice appear in all
+        copies.<br><br>
+
+        THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHORS DISCLAIM ALL
+        WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+        WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+        AUTHORS BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+        DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA
+        OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+        TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+        PERFORMANCE OF THIS SOFTWARE.
+        ]]>
+    </string>
+    <string name="notice_how_to">
+        <![CDATA[<b>如何使用 IITCm:</b><br><br>
+        • 导览: 从屏幕的左边边缘滑入（或按一下应用图标）显示导览界面
+        按一下应用图标，再次返回到地图。<br><br>
+        •图层/荧光笔: 从屏幕的右侧边缘滑入（或者在工具列选择图层选择图标）
+	来显示图层页面<br><br>
+        • 如果设备支持NFC, 您可以快速的传送当前的Portal/地图链接到另一个设备上 (
+	将两个设备背对背并点击要传送数据一端的设备).<br><br>
+        • 您可以在设置中添加官方插件。<br><br>
+        • 对于插件信息，请参考 <a href="http://iitc.me/faq/#mobile-plugins">FAQ。]]>
+    </string>
+    <string name="notice_info">
+        <![CDATA[提示: 用替代方法开启信息窗口:<br><br>
+        • 点选一个portal<br>
+        • 点选屏幕下方状态列的左半边]]>
+    </string>
+    <string name="notice_panes">
+        <![CDATA[提示:<br><br>
+        部分插件 (e.g. portal清单和portal书签) 现在显示在导览页面以供快速查看。<br>
+        它们将不再显示于信息界面内、<br><br>
+        从屏幕左边滑入 (或按一下应用图标) 可以看到它们。]]>
+    </string>
+    <string name="notice_extplugins">
+        <![CDATA[提示:<br><br>
+        IITC Mobile 可以读取第三方插件！<br><br>
+        要新增插件请点击右上方的选项。<br>
+        插件必须以 \'.user.js\' 结尾, 并存放于 <b>%1$s</b>。<br>]]>
+    </string>
+    <string name="notice_sharing">
+        <![CDATA[使用 <em>分享portal</em> 你能够:<br>
+        • 发送portal链接给另一个人<br>
+        • 在另一个应用查看您选择的portal<br>
+        • 在网页开启一个portal链接<br>
+        <br>
+        提示: 使用 Google 地图 (或任何一个导航软件), 您可以快速的导航到您
+        选择的portal。<br>
+        <br>
+        这些提示也适用于<em>地图链接</em>。]]>
+    </string>
+
+    <string name="pref_ui_cat">界面</string>
+    <string name="pref_misc_cat">杂项</string>
+    <string name="pref_tweaks_cat">调整</string>
+    <string name="pref_plugins">IITC 插件</string>
+    <string name="pref_plugins_sum">插件会增加/改变IITC的使用体验, 大多数IITC桌面版的插件可以在这里找到。</string>
+    <string name="pref_plugins_title">可用的插件</string>
+    <string name="pref_user_location">在地图上显示用户位置</string>
+    <string name="pref_persistent_zoom">保持缩放级别</string>
+    <string name="pref_persistent_zoom_sum">按下定位按钮时不改变缩放级别</string>
+    <string name="pref_user_zoom">显示缩放控制</string>
+    <string name="pref_user_zoom_sum">即使在支持多点触控的设备上也显示 +/- 按钮。</string>
+    <string name="pref_fullscreen">自定义全屏模式</string>
+    <string name="pref_fullscreen_sum">在全屏模式下隐藏部分元件。
+        提示: IITCm 仍然可以由导览页面控制</string>
+    <string name="pref_force_desktop">强制桌面模式</string>
+    <string name="pref_force_desktop_sum">适用于平板电脑,在手机上看起来很糟糕。</string>
+    <string name="pref_external_storage">将缓存移动到外部存储空间</string>
+    <string name="pref_external_storage_sum">需要重新启动！将缓存移动到SD卡。
+        必须有外部存储装置。</string>
+    <string name="pref_press_twice_to_exit">按两次返回键退出</string>
+    <string name="pref_press_twice_to_exit_sum">避免不小心按到返回键</string>
+    <string name="pref_advanced_options">高级设置</string>
+    <string name="pref_advanced_options_sum">开发者选择和进阶调整</string>
+    <string name="pref_enable_dev_mode">启用开发者模式</string>
+    <string name="pref_enable_dev_mode_sum">如果启用,所有IITC资源都会从Android设备的外部存储装置读取。
+      请将所有资源从 $IITC_folder/build/mobile/ 复制到 /sdcard/IITC_Mobile/dev/。</string>
+    <string name="pref_disable_splash">停用程序开启画面</string>
+    <string name="pref_fake_user_agent">伪造用户代理</string>
+    <string name="pref_fake_user_agent_sum">让IITCm显示为桌面版intel网站。
+        提示: 如果只是想使用桌面模式,请使用\'强制桌面模式\'设定。</string>
+    <string name="pref_android_menu">自定义IITCm菜单</string>
+    <string name="pref_android_menu_sum">调整IITCm菜单内的项目</string>
+    <string name="pref_update_plugins_cat">用户插件更新</string>
+    <string name="pref_update_plugins_interval">自定义插件更新间隔</string>
+    <string name="pref_update_plugins_interval_sum">IITCm间隔多久扫描新的插件版本</string>
+    <string name="pref_force_plugin_update">强制更新插件</string>
+    <string name="pref_force_plugin_update_sum">更新所有启用的插件</string>
+    <string name="pref_secure_updates">安全更新</string>
+    <string name="pref_secure_updates_sum">如果启用，将只在https下更新</string>
+
+    <string name="menu_reload">重载 IITC</string>
+    <string name="menu_toggle_fullscreen">全屏</string>
+    <string name="menu_layer_chooser">图层选择</string>
+    <string name="menu_locate">获取位置</string>
+    <string name="menu_clear_cookies">清除Cookies</string>
+    <string name="menu_search">搜索</string>
+    <string name="menu_debug">Debug</string>
+    <string name="menu_send_screenshot">发送截图</string>
+    <string name="menu_plugins_add">添加外部插件</string>
+    <string name="menu_copy">复制</string>
+    <string name="menu_delete">删除</string>
+    <string name="choose_account_to_login">选择一个账户登录</string>
+    <string name="login_failed">登录失败。</string>
+    <string name="search_hint">搜索位置</string>
+    <string name="intent_error">地址无法打开</string>
+    <string name="msg_copied">复制到剪贴板…</string>
+    <string name="notice_do_not_show_again">不再显示</string>
+
+    <string name="sign_in_to">登录到 %1$s %2$s"</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="sign_in_action">登录</string>
+
+    <string name="tab_map">定位</string>
+    <string name="tab_share">分享</string>
+    <string name="tab_browser">Intel</string>
+
+    <string name="label_highlighter">荧光笔</string>
+    <string name="label_base_layer">基本图层</string>
+    <string name="label_overlay_layers">覆盖图层</string>
+
+    <string name="install_dialog_top">安装外部插件吗？</string>
+    <string name="install_dialog_msg">
+        <![CDATA[IITCm 被要求安装以下的javascript代码文件:<br><br>%1$s<br><br>
+        <b>请注意:</b> 外部来源的Javascript可能包含有害代码(间谍软件 etc.)！<br><br>
+        你确定要继续吗？？]]>
+    </string>
+
+</resources>
