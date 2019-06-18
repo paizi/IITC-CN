@@ -1,5 +1,9 @@
 Ingress Intel Total Conversion (IITC)
 =====================================
+[![Build Status](https://travis-ci.org/paizi/IITC-CN.svg?branch=master)](https://travis-ci.org/paizi/IITC-CN)
+
+> IITC是一个浏览器插件，可以修改Ingress intel地图。它比标准站点更快，并提供更多功能。它适用于桌面浏览器，如Firefox和Chrome，并提供移动应用程序。
+
 修改自https://github.com/IITC-CE/ingress-intel-total-conversion
 
 由于精力有限，目前只有Android版本的汉化，如有意协助汉化，请提交pull requests，感激不尽！
