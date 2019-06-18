@@ -21,7 +21,7 @@ android {
     buildToolsVersion = '28.0.3'
 
     defaultConfig {
-        applicationId "org.exarhteam.iitc_mobile"
+        applicationId "org.exarhteam.iitcm_cn"
         minSdkVersion 14
         targetSdkVersion 28
         versionCode = getVersionCode()

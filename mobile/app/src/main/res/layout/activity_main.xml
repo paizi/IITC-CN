@@ -12,7 +12,7 @@
 
         <include layout="@layout/toolbar_layout" />
 
-        <org.exarhteam.iitc_mobile.IITC_WebView
+        <org.exarhteam.iitcm_cn.IITC_WebView
             android:id="@+id/iitc_webview"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"

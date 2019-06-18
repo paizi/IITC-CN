@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="org.exarhteam.iitc_mobile">
+        package="org.exarhteam.iitcm_cn">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -10,13 +10,13 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name="org.exarhteam.iitc_mobile.IITC_Application"
+        android:name="org.exarhteam.iitcm_cn.IITC_Application"
         android:allowBackup="true"
         android:icon="@drawable/ic_iitcm"
         android:label="@string/app_name"
         android:theme="@style/AppBaseTheme">
         <activity
-            android:name="org.exarhteam.iitc_mobile.IITC_Mobile"
+            android:name="org.exarhteam.iitcm_cn.IITC_Mobile"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize|uiMode"
             android:label="@string/app_name"
             android:launchMode="singleTask">
@@ -77,14 +77,14 @@
         </activity>
 
         <activity
-            android:name="org.exarhteam.iitc_mobile.prefs.PreferenceActivity"
+            android:name="org.exarhteam.iitcm_cn.prefs.PreferenceActivity"
             android:theme="@style/AppPrefTheme"
             android:exported="false"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/activity_settings"/>
 
         <activity
-            android:name="org.exarhteam.iitc_mobile.prefs.PluginPreferenceActivity"
+            android:name="org.exarhteam.iitcm_cn.prefs.PluginPreferenceActivity"
             android:theme="@style/AppPrefTheme"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/activity_plugins">
@@ -126,18 +126,18 @@
         </activity>
 
         <activity
-            android:name="org.exarhteam.iitc_mobile.share.ShareActivity"
+            android:name="org.exarhteam.iitcm_cn.share.ShareActivity"
             android:theme="@style/AppPrefTheme"
             android:label="@string/activity_share"
             android:noHistory="true"
-            android:parentActivityName="org.exarhteam.iitc_mobile.IITC_Mobile">
+            android:parentActivityName="org.exarhteam.iitcm_cn.IITC_Mobile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.exarhteam.iitc_mobile.IITC_Mobile"/>
+                android:value="org.exarhteam.iitcm_cn.IITC_Mobile"/>
         </activity>
 
         <activity
-            android:name="org.exarhteam.iitc_mobile.share.SendToClipboard"
+            android:name="org.exarhteam.iitcm_cn.share.SendToClipboard"
             android:enabled="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -146,7 +146,7 @@
             android:noHistory="false"/>
 
         <activity
-            android:name="org.exarhteam.iitc_mobile.share.SaveToFile"
+            android:name="org.exarhteam.iitcm_cn.share.SaveToFile"
             android:enabled="true"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -180,6 +180,6 @@
         <!-- Points to searchable activity so the whole app can invoke search. -->
         <meta-data
             android:name="android.app.default_searchable"
-            android:value="org.exarhteam.iitc_mobile.IITC_Mobile"/>
+            android:value="org.exarhteam.iitcm_cn.IITC_Mobile"/>
     </application>
 </manifest>
