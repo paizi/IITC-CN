@@ -1,13 +1,30 @@
 // ==UserScript==
 // @id             iitc-plugin-compute-ap-stats@Hollow011
-// @name           IITC plugin: Available AP statistics
-// @category       Info
-// @version        0.4.1.@@DATETIMEVERSION@@
-// @description    [@@BUILDNAME@@-@@BUILDDATE@@] Displays the per-team AP gains available in the current view.
-@@METAINFO@@
+// @name           IITC plugin: AP统计信息
+// @category       信息
+// @version        0.4.1.20190616.73555
+// @description    [mobile-2019-06-16-073555] 显示当前视图中每个阵营的AP收益。
+// @updateURL      none
+// @downloadURL    none
+// @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
+// @include        https://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
+// @grant          none
 // ==/UserScript==
 
-@@PLUGINSTART@@
+
+function wrapper(plugin_info) {
+// ensure plugin framework is there, even if iitc is not yet loaded
+if(typeof window.plugin !== 'function') window.plugin = function() {};
+
+//PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
+//(leaving them in place might break the 'About IITC' page or break update checks)
+plugin_info.buildName = 'mobile';
+plugin_info.dateTimeVersion = '20190616.73555';
+plugin_info.pluginId = 'ap-stats';
+//END PLUGIN AUTHORS NOTE
+
+
 
 // PLUGIN START ////////////////////////////////////////////////////////
 
@@ -49,22 +66,22 @@ window.plugin.compAPStats.requestFinished = function() {
 
 window.plugin.compAPStats.update = function(hasFinished) {
   var result = window.plugin.compAPStats.compAPStats();
-  var loading = hasFinished ? '' : 'Loading...';
+  var loading = hasFinished ? '' : '加载中...';
 
   var formatRow = function(team,data) {
-    var title = 'Destroy and capture '+data.destroyPortals+' portals\n'
-              + 'Destroy '+data.destroyLinks+' links and '+data.destroyFields+' fields\n'
-              + 'Capture '+data.capturePortals+' neutral portals, complete '+data.finishPortals+' portals\n'
-              + '(unknown additional AP for links/fields)';
+    var title = '摧毁和占领 '+data.destroyPortals+' 个portals\n'
+              + '摧毁 '+data.destroyLinks+' 条links 和 '+data.destroyFields+' 个fields\n'
+              + '占领 '+data.capturePortals+' 个中立portals, 插满 '+data.finishPortals+' 个portals\n'
+              + '(links/fields的附加AP未知)';
     return '<tr><td>'+team+'</td><td style="text-align:right" title="'+title+'">'+digits(data.AP)+'</td></tr>';
   }
 
 
-  $('#available_ap_display').html('Available AP in this area: '
+  $('#available_ap_display').html('这个区域的可用AP: '
     + loading
     + '<table>'
-    + formatRow('Enlightened',result.enl)
-    + formatRow('Resistance', result.res)
+    + formatRow('启蒙军',result.enl)
+    + formatRow('反抗军', result.res)
     + '</table>');
 }
 
@@ -163,4 +180,18 @@ var setup =  function() {
 
 // PLUGIN END //////////////////////////////////////////////////////////
 
-@@PLUGINEND@@
+
+setup.info = plugin_info; //add the script info data to the function as a property
+if(!window.bootPlugins) window.bootPlugins = [];
+window.bootPlugins.push(setup);
+// if IITC has already booted, immediately run the 'setup' function
+if(window.iitcLoaded && typeof setup === 'function') setup();
+} // wrapper end
+// inject code into site context
+var script = document.createElement('script');
+var info = {};
+if (typeof GM_info !== 'undefined' && GM_info && GM_info.script) info.script = { version: GM_info.script.version, name: GM_info.script.name, description: GM_info.script.description };
+script.appendChild(document.createTextNode('('+ wrapper +')('+JSON.stringify(info)+');'));
+(document.body || document.head || document.documentElement).appendChild(script);
+
+
