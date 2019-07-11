@@ -1,3 +1,5 @@
+## 项目迁移至https://github.com/paizi/ingress-intel-total-conversion
+
 Ingress Intel Total Conversion (IITC)
 =====================================
 [![Version](https://img.shields.io/github/release/paizi/IITC-CN.svg)](https://github.com/paizi/IITC-CN/releases)
